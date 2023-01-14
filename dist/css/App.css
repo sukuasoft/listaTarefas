@@ -1,0 +1,312 @@
+:root{
+    --size-icon: 28px;
+}
+
+*{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    font-family: sans-serif;
+}
+
+.container{
+    max-width: 100%;
+    padding: 40px 10px 10px 10px;
+    margin:0px auto;
+    width: 450px;
+}
+.container > .title{
+    font-weight: bold;
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+/* create Task */
+.createTask{
+    margin-bottom: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.createTask input{
+    border:none;
+    outline: none;
+    display: block;
+    width: 80%;
+    margin-right: 10px;
+    padding:10px;
+    font-size:17px;
+    background:rgb(233, 232, 232);
+}
+
+.createTask input:focus{
+    transition: all .5s;
+    border-color:  dodgerblue;
+}
+.createTask button{
+    color:white;
+    height: 40px;
+    display: block;
+    background: dodgerblue;
+    padding: 4px 20px;
+    border-radius: 6px;
+
+    border: none;
+    outline: none;
+}
+
+.createTask button:hover{
+    background: rgb(3, 106, 209);
+    cursor: pointer;
+}
+
+
+
+/* Tasks */
+
+.tasksContainer{
+ display: block;  
+ border-bottom: 2px solid rgb(226, 226, 226);
+}
+.tasksContainer > .title{
+    font-size:17px;
+    font-weight: bold;
+}
+
+.tasks{
+    height: 370px;
+    overflow: auto;
+    margin-top: 10px;
+}
+/* width */
+.tasks::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.tasks::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+.tasks::-webkit-scrollbar-thumb {
+    background: #888888;
+  }
+  
+  /* Handle on hover */
+.tasks::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 112, 240);
+  }
+.task{
+    display: flex;
+    align-items: center;
+    padding:10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    user-select:none;
+   cursor: pointer;
+}
+
+.task:hover{
+    background: #f0f0f0;
+}
+
+.task .icon{
+    background-image:url('/images/task.png');
+    background-size: 100%;
+    margin-right: 15px;
+    width: var(--size-icon);
+    height: var(--size-icon);
+    cursor: pointer;
+}
+
+.task .icon:hover{
+    filter:brightness(1.3);
+}
+
+.task-done .icon{
+    background-image:url('/images/task-done.png'); 
+}
+
+.task-title{
+display: block;
+}
+
+.task-done .task-title{
+    text-decoration: line-through;
+    color: #bebebe;
+}
+
+.task .btn-remove{
+    cursor: pointer;
+    background-image:url('/images/lixo.png');
+    background-size: 100%;
+    margin-left:auto;
+    width: var(--size-icon);
+    height: var(--size-icon);
+}
+
+.task .btn-remove:hover{
+filter: brightness(1.3);
+}
+
+/* legenda da pagina */
+
+.legendPage{
+    color:#606060;
+    width: fit-content;
+    margin-left: auto;
+    font-size: 14px;
+}
+
+
+/*edit task */
+.editTask{
+   position: absolute;
+   left: 0px;
+   top:0px;
+   width: 100%;
+   height: 100%;
+   z-index: 3;
+   background: rgba(0, 0, 0, 0.5); 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.editTask-container{
+    max-width: 100%;
+    margin:0px 10px;
+    width:350px;
+    border-radius: 10px;
+    background: white;
+    position:relative;
+    padding: 20px;
+}
+.editTaskTitle{
+    font-weight: bold;
+text-align: center;
+margin-bottom: 25px;
+font-size:22px;
+}
+
+.editTask-container input{
+    display: block;
+    border:none;
+    outline: none;
+    background:rgb(221, 221, 221);
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.editTask-container button{
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    border:none;
+    background-color:dodgerblue;
+    cursor: pointer;
+    color:white;
+}
+.editTask-container button:hover{
+    background-color: rgb(3, 106, 209);
+}
+.editTask-container .btn-exit{
+    position: absolute;
+    top:8px;
+    right: 10px;
+    color:red;
+    font-size: 18px;
+    font-weight: bold;
+  
+    padding:4px 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: all .4s;
+}
+
+.editTask-container .btn-exit:hover{
+    background: rgb(252, 208, 208);
+    transition: all .4s;
+}
+
+.notShow{
+    display: none !important;
+}
+
+.rodape{
+    margin-top:15px;
+    display: flex;
+    align-items: center;
+}
+
+.checkedInput{
+margin-right: 15px; 
+display: flex;   
+align-items: center;
+cursor: pointer;
+}
+
+.checkedInput:focus{
+    outline: 2px solid black;
+}
+
+.checkedInput .input{
+    padding: 4px;
+    border-radius: 4px;
+    margin-right: 8px;
+    background:#bebebe;
+    transition: all .4s;
+}
+
+
+.checkedInputOn .input{
+    background: rgb(0, 112, 240) !important;
+    transition: all .4s;
+}
+
+.checkedInput .input .mark{
+    width: 12px;
+    height: 12px;
+    background-image: url('/images/check.png');
+    background-size:100% ;
+opacity: 0;
+transition: all .4s;
+}
+
+.checkedInputOn .input .mark{
+    opacity: 1 !important;
+    transition: all .4s;
+}
+
+
+.checkedInput .label{
+    cursor: pointer;
+}
+
+.btn-salvar{
+    background-color:dodgerblue;
+    color:white;
+    border:none;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-salvar.btn-disabled{
+    background: #bebebe;
+    cursor:default;
+}
+
+
+.btn-salvar:not(.btn-disabled):hover{
+    background-color: rgb(3, 106, 209);
+}
