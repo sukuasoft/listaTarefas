@@ -150,10 +150,13 @@ display: block;
     height: var(--size-icon);
 }
 
+.task .btn-remove:hover{
+filter: brightness(1.3);
+}
+
 /* legenda da pagina */
 
 .legendPage{
-    margin-top:15px;
     color:#606060;
     width: fit-content;
     margin-left: auto;
@@ -236,4 +239,74 @@ font-size:22px;
 
 .notShow{
     display: none !important;
+}
+
+.rodape{
+    margin-top:15px;
+    display: flex;
+    align-items: center;
+}
+
+.checkedInput{
+margin-right: 15px; 
+display: flex;   
+align-items: center;
+cursor: pointer;
+}
+
+.checkedInput:focus{
+    outline: 2px solid black;
+}
+
+.checkedInput .input{
+    padding: 4px;
+    border-radius: 4px;
+    margin-right: 8px;
+    background:#bebebe;
+    transition: all .4s;
+}
+
+
+.checkedInputOn .input{
+    background: rgb(0, 112, 240) !important;
+    transition: all .4s;
+}
+
+.checkedInput .input .mark{
+    width: 12px;
+    height: 12px;
+    background-image: url('/images/check.png');
+    background-size:100% ;
+opacity: 0;
+transition: all .4s;
+}
+
+.checkedInputOn .input .mark{
+    opacity: 1 !important;
+    transition: all .4s;
+}
+
+
+.checkedInput .label{
+    cursor: pointer;
+}
+
+.btn-salvar{
+    background-color:dodgerblue;
+    color:white;
+    border:none;
+    outline: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-salvar.btn-disabled{
+    background: #bebebe;
+    cursor:default;
+}
+
+
+.btn-salvar:not(.btn-disabled):hover{
+    background-color: rgb(3, 106, 209);
 }
