@@ -4,7 +4,7 @@ export default function CreateTask(props){
     const inputRef =   useRef(null);
     return (
         <div className='createTask'>
-                <input ref={inputRef} onKeyDown={(ev)=>{
+                <input name="task" ref={inputRef} onKeyDown={(ev)=>{
                     if(ev.keyCode == 13){
                          sendTask();
                     }
